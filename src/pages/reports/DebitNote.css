@@ -1,0 +1,12 @@
+.AddressRow {
+  margin-bottom: 1.5em;
+}
+
+.AddressRow p {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.text-right {
+  text-align: right;
+}

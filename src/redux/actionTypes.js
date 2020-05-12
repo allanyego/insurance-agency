@@ -1,0 +1,14 @@
+export const ADD_CLIENT = 'ACTION_CLIENT';
+export const UPDATE_CLIENTS = 'UPDATE_CLIENTS';
+export const ADD_INSURER = 'ADD_INSURERS';
+export const ADD_ERROR = 'ADD_ERROR';
+export const SHIFT_ERROR = 'SHIFT_ERROR';
+export const ADD_SUCCESS = 'ADD_SUCCESS';
+export const SHIFT_SUCCESS = 'SHIFT_SUCCESS';
+export const UPDATE_INSURERS = 'UPDATE_INSURERS';
+export const ADD_POLICY = 'ADD_POLICY';
+export const UPDATE_POLICY = 'UPDATE_POLICY';
+export const UPDATE_POLICIES = 'UPDATE_POLICIES';
+export const ADD_VEHICLE = 'ADD_VEHICLE';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';

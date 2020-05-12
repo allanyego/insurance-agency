@@ -1,0 +1,32 @@
+.ProfileSkeleton {
+  height: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 0.5fr 1.5fr 2fr;
+  gap: 1em;
+}
+
+.ProfileSkeleton div {
+  background-color: rgb(204, 201, 201);
+  animation: SkeletonFade 0.9s ease-in-out infinite alternate;
+}
+
+.ProfileSkeleton div:nth-child(1) {
+  width: 75%;
+}
+
+.ProfileSkeleton div:nth-child(2) {
+  width: 45%;
+  animation-delay: 0.3s;
+}
+
+.ProfileSkeleton div:nth-child(3) {
+  width: 75%;
+  animation-delay: 0.4s;
+}
+
+@keyframes SkeletonFade {
+  to {
+    opacity: 0.1;
+  }
+}

@@ -1,0 +1,72 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.ant-layout-content {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ant-layout-content::-webkit-scrollbar {
+  display: none;
+  width: 5px;
+}
+
+.ant-layout,
+.ant-layout-sider {
+  height: 100%;
+}
+
+.FallbackContainer div {
+  position: relative;
+}
+
+.FallbackContainer div::after, .FallbackContainer div::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  animation: FadeOut 0.7s ease-out infinite alternate;
+}
+
+.FallbackContainer div::after {
+  width: 110%;
+  height: 110%;
+  background-color: #3e46a0;
+  top: -5%;
+  left: -5%;
+  z-index: -1;
+}
+
+.FallbackContainer div::before {
+  width: 150%;
+  height: 150%;
+  background-color: #4d59d4;
+  top: -25%;
+  left: -25%;
+  z-index: -1;
+}
+
+@keyframes FadeOut {
+  to {
+    transform: scale(2.5);
+    border-radius: 50%;
+    opacity: 0.2;
+  }
+}
+
+.ant-list-split .ant-list-item {
+  border-bottom: 1px solid #f0f0f0 !important;
+}

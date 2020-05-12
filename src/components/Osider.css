@@ -1,0 +1,26 @@
+.ant-layout-sider {
+  background-color: #000000;
+}
+
+.ant-layout-sider .ant-menu.ant-menu-dark {
+  background-color: #090909;
+}
+
+.ant-layout-sider .ant-menu.ant-menu-dark .ant-menu-sub {
+  background-color: #181818;
+}
+
+.logo {
+  height: 74px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 24px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  border-radius: 1em;
+}
