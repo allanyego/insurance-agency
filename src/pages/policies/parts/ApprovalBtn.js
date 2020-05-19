@@ -23,6 +23,8 @@ export default function ApprovalBtn({ policy, updatePolicy, addSuccess, token })
       if (resp && resp.data) {
         updatePolicy(resp.data);
         addSuccess('Policy has been approved');
+      } else {
+        setLoading(false);
       }
     } catch (error) {
       console.log('ERROR', error);

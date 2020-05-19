@@ -1,6 +1,6 @@
 {
   "name": "orient-insurance",
-  "homepage": "https://yegow.github.io/orient-insurance",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

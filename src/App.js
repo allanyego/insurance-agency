@@ -17,17 +17,17 @@ function App() {
     <Router>
       <Suspense fallback={<Fallback />}>
         <Switch>
-          <Route path={`${BASE_PATH}/login`}>
+          <Route path={`/login`}>
             <Login />
           </Route>
-          <Route path={`${BASE_PATH}/change-password`}>
+          <Route path={`/change-password`}>
             <ChangePassword />
           </Route>
-          <Route path={`${BASE_PATH}/app`}>
+          <Route path={`/app`}>
             <Main />
           </Route>
           <Route path="*">
-            <Redirect to={`${BASE_PATH}/app`} />
+            <Redirect to={`/app`} />
           </Route>
         </Switch>
       </Suspense>
