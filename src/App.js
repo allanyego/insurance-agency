@@ -1,16 +1,19 @@
-import React, { Suspense } from 'react';
+import React, { Suspense } from "react";
 import {
-  BrowserRouter as Router, Switch, Route, Redirect
-} from 'react-router-dom';
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
-import './App.css';
-import Fallback from './components/Fallback';
-import Messages from './containers/common/Messages';
-const Main = React.lazy(() => import('./containers/Main'));
-const Login = React.lazy(() => import('./containers/admins/Login'));
-const ChangePassword = React.lazy(() => import('./containers/admins/ChangePassword'));
-
-const BASE_PATH = '/orient-insurance';
+import "./App.css";
+import Fallback from "./components/Fallback";
+import Messages from "./containers/common/Messages";
+const Main = React.lazy(() => import("./containers/Main"));
+const Login = React.lazy(() => import("./containers/admins/Login"));
+const ChangePassword = React.lazy(() =>
+  import("./containers/admins/ChangePassword")
+);
 
 function App() {
   return (
@@ -27,7 +30,7 @@ function App() {
             <Main />
           </Route>
           <Route path="*">
-            <Redirect to="`/app`" />
+            <Redirect to="/app" />
           </Route>
         </Switch>
       </Suspense>

@@ -1,0 +1,4 @@
+name: "Github pages deploy"
+on: deployment
+  env:
+    SERVER_URL: https://orient-backend-ke.herokuapp.com/api/v1

@@ -24,7 +24,7 @@ export default function OSider({ collapsed, open=true }) {
     <Sider trigger={null} collapsible collapsed={collapsed}
       className={open ? "open" : ""}>
       <div className="logo">
-        <img src="/orient-insurance/orient-logo.png" alt="Company logo" />
+        <img src="orient-logo.png" alt="Company logo" />
       </div>
       <Menu theme="dark" mode="inline">
         <SubMenu
