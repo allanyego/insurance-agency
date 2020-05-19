@@ -51,7 +51,7 @@ export default function Main({ auth, addError }) {
 
   if (!auth?.token) {
     return <Redirect to={{
-      pathname: "/login",
+      pathname: "orient-insurance/login",
       state: {
         attemptedRoute: location.pathname
       }

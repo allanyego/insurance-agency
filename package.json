@@ -1,6 +1,6 @@
 {
   "name": "orient-insurance",
-  "homepage": ".",
+  "homepage": "orient-insurance",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

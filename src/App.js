@@ -17,17 +17,17 @@ function App() {
     <Router>
       <Suspense fallback={<Fallback />}>
         <Switch>
-          <Route path={`/login`}>
+          <Route path="/login">
             <Login />
           </Route>
-          <Route path={`/change-password`}>
+          <Route path="/change-password">
             <ChangePassword />
           </Route>
-          <Route path={`/app`}>
+          <Route path="/app">
             <Main />
           </Route>
           <Route path="*">
-            <Redirect to={`/app`} />
+            <Redirect to="`/app`" />
           </Route>
         </Switch>
       </Suspense>
