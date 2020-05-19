@@ -1,8 +1,9 @@
 import handleError from './handleError';
 import { API_URL as api_url } from '../constants';
 
-const { NODE_ENV, SERVER_URL } = process.env;
-const API_URL = NODE_ENV === 'production' ? SERVER_URL : api_url;
+console.log(process.env);
+const { NODE_ENV, REACT_APP_SERVER_URL } = process.env;
+const API_URL = NODE_ENV === 'production' ? REACT_APP_SERVER_URL : api_url;
 
 export default async function request({
   url, method, body, query, headers
