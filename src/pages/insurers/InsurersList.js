@@ -49,12 +49,12 @@ export default function InsurersList({ insurers, updateInsurers }) {
       <Row justify="center">
         <Col flex="auto">
           <Row justify="center">
-            <Col span={14}>
+            <Col xs={24} sm={18} lg={12}>
               <Search placeholder="Insurer name" onSearch={onSearch} enterButton />
             </Col>
           </Row>
           <Row justify="center">
-            <Col span={20}>
+            <Col xs={24} lg={20}>
               <List
                 itemLayout="horizontal"
                 dataSource={innerInsurers}

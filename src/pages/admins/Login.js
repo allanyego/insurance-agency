@@ -59,16 +59,18 @@ export default function Login({ login, addError, auth }) {
   return (
     <AuthPage title="Admin login">
       <Row justify="center">
-        <Col span={6}>
+        <Col xs={20} sm={14} md={10} lg={8} xl={6}>
           <Form className="OForm"
             form={form}>
             <LoginDetails />
-            <Button
-              type="primary"
-              onClick={loginAdmin}
-              loading={loading}>
-              Log in
-            </Button>
+            <Row justify="end">
+              <Button
+                type="primary"
+                onClick={loginAdmin}
+                loading={loading}>
+                Log in
+              </Button>
+            </Row>
           </Form>
         </Col>
       </Row>

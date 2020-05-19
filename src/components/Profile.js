@@ -8,7 +8,7 @@ export default function Profile({ children }) {
     <Row justify="center" style={{
       paddingTop: '2em'
     }}>
-      <Col span={18}>
+      <Col xs={24}>
         <Card>
           {children}
         </Card>

@@ -6,7 +6,7 @@ import {
   useRouteMatch,
   useLocation,
 } from 'react-router-dom';
-import { Layout } from 'antd';
+import { Layout, Grid } from 'antd';
 
 import OSider from '../components/OSider';
 
@@ -23,21 +23,33 @@ import { Client } from './clients';
 import { Policy } from './policies';
 
 const { Content } = Layout;
+const {useBreakpoint} = Grid;
 
 export default function Main({ auth, addError }) {
   const location = useLocation();
   const { path } = useRouteMatch();
   const [collapsed, setCollapsed] = useState(false);
+  const [open, setOpen] = useState(true);
+  const screens = useBreakpoint();
+
   useEffect(() => {
+    if (!screens.md) {
+      setCollapsed(false);
+      setOpen(false);
+    }
+    
     !auth?.token && addError('You need to login first');
-  });
+  }, [screens]);
 
   const toggle = () => {
     setCollapsed(!collapsed);
   };
 
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
+
   if (!auth?.token) {
-    console.log('Redirecting', auth);
     return <Redirect to={{
       pathname: "/login",
       state: {
@@ -48,9 +60,15 @@ export default function Main({ auth, addError }) {
 
   return (
     <Layout>
-      <OSider collapsed={collapsed} />
+      <OSider 
+        collapsed={collapsed}
+        open={open} />
       <Layout className="site-layout">
-        <OHeader collapsed={collapsed} toggle={toggle} />
+        <OHeader
+          collapsed={collapsed}
+          toggle={toggle}
+          open={open}
+          toggleOpen={toggleOpen} />
         <Content
           className="site-layout-background"
           style={{

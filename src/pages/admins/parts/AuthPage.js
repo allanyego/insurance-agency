@@ -12,7 +12,7 @@ export default function AuthPage({title, children}) {
     <Page>
       <Row justify="center">
         <Col>
-          <img src="orient-logo.png" alt="Company logo"
+          <img src="orient-insurance/orient-logo.png" alt="Company logo"
             style={{
               margin: '0 auto',
               display: 'block',

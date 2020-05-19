@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
-import {
-  Col,
-  Form,
-  Button,
-  Row
-} from 'antd';
-import { useParams, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Col, Form, Button, Row } from "antd";
+import { useParams, useLocation } from "react-router-dom";
 
-import ClientDetails from './parts/ClientDetails';
-import PolicyDetails from './parts/PolicyDetails';
+import ClientDetails from "./parts/ClientDetails";
+import PolicyDetails from "./parts/PolicyDetails";
 
-import Page from '../../components/Page';
+import Page from "../../components/Page";
 
-import { postClient } from '../../util/http/clients';
-import { postPolicy } from '../../util/http/policies';
+import { postClient } from "../../util/http/clients";
+import { postPolicy } from "../../util/http/policies";
 
-import '../Form.css';
+import "../Form.css";
 
 export default function NewClientForm({
   addClient,
@@ -23,7 +18,7 @@ export default function NewClientForm({
   addVehicle,
   addSuccess,
   addError,
-  token
+  token,
 }) {
   const { insurerId } = useParams();
   const location = useLocation();
@@ -36,7 +31,7 @@ export default function NewClientForm({
     setLoading(true);
     try {
       fn().then(() => {
-        addSuccess('Data submitted successfully');
+        addSuccess("Data submitted successfully");
         form.resetFields();
       });
     } catch (error) {
@@ -89,20 +84,18 @@ export default function NewClientForm({
     <Page pageTitle={pageTitle}>
       <Row justify="center">
         <Col>
-          <Form className="OForm"
-            form={form}>
-            {!clientId &&
-              <ClientDetails />
-            }
+          <Form className="OForm" form={form}>
+            {!clientId && <ClientDetails />}
             <PolicyDetails />
-            <Button
-              type="primary"
-              onClick={
-                clientId ? submitPolicy : submitClient
-              }
-              loading={loading}>
-              Submit
-            </Button>
+            <Row justify="end">
+              <Button
+                type="primary"
+                onClick={clientId ? submitPolicy : submitClient}
+                loading={loading}
+              >
+                Submit
+              </Button>
+            </Row>
           </Form>
         </Col>
       </Row>

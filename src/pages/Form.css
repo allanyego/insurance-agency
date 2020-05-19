@@ -20,6 +20,10 @@
   margin-bottom: 1.5em;
 }
 
+.ant-input-number, .ant-picker {
+  width: 100%;
+}
+
 .RememberMeInput .ant-form-item-control,
 .RememberMeInput .ant-form-item-extra {
   display: flex;

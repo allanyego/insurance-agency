@@ -2,11 +2,11 @@ import React from 'react';
 
 import PageTitle from './PageTitle';
 
+import './Page.css';
+
 export default function Page({ pageTitle, children }) {
   return (
-    <section style={{
-      padding: '2.5em 0 1.5em'
-    }}>
+    <section className="Page">
       {pageTitle &&
         <PageTitle pageTitle={pageTitle} />
       }

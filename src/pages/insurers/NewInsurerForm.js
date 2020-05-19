@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
-import {
-  Button,
-  Col,
-  Form,
-  Row,
-} from 'antd';
+import React, { useState } from "react";
+import { Button, Col, Form, Row } from "antd";
 
-import InsurerDetails from './parts/InsurerDetails';
-import Page from '../../components/Page';
+import InsurerDetails from "./parts/InsurerDetails";
+import Page from "../../components/Page";
 
-import { postInsurer } from '../../util/http/insurers';
+import { postInsurer } from "../../util/http/insurers";
 
-import '../Form.css';
+import "../Form.css";
 
 export default function NewInsurerForm({
-  addInsurer, addSuccess, token, addError,
+  addInsurer,
+  addSuccess,
+  token,
+  addError,
 }) {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -25,11 +23,11 @@ export default function NewInsurerForm({
       const values = await form.validateFields();
       const resp = await postInsurer({
         token,
-        ...values
+        ...values,
       });
       if (resp && resp.data) {
         addInsurer(resp.data);
-        addSuccess('Data submitted successfully');
+        addSuccess("Data submitted successfully");
         form.resetFields();
       } else if (resp && resp.error) {
         addError(resp.error);
@@ -37,29 +35,32 @@ export default function NewInsurerForm({
     } catch (error) {
       addError(error.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   };
 
   const onFinishFailed = ({ values, errorFields }) => {
-    console.log('Error', errorFields);
+    console.log("Error", errorFields);
   };
 
   return (
     <Page pageTitle="Register new insurer">
       <Row justify="center">
         <Col>
-          <Form className="OForm"
+          <Form
+            className="OForm"
             form={form}
             colon={false}
             labelAlign="left"
             scrollToFirstError={true}
-            onFinishFailed={onFinishFailed}>
+            onFinishFailed={onFinishFailed}
+          >
             <InsurerDetails />
-            <Button type="primary" onClick={onSubmit}
-              loading={loading}>
-              Submit
-            </Button>
+            <Row justify="end">
+              <Button type="primary" onClick={onSubmit} loading={loading}>
+                Submit
+              </Button>
+            </Row>
           </Form>
         </Col>
       </Row>

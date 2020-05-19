@@ -1,0 +1,24 @@
+.ProfileHeader .ant-col {
+display: flex;
+align-items: center;
+}
+
+.ProfileHeader .ant-typography-disabled {
+  display: block;
+  margin-right: 0.5em;
+}
+
+.ProfileHeader h3 {
+  display: block;
+}
+
+@media screen and (max-width: 575px) {
+  .ProfileHeader .ant-typography-disabled {
+    display: none;
+  }
+  
+  .ProfileHeader h3 {
+    margin-top: 0.75em !important;
+    font-size: 1.3em;
+  }
+}

@@ -24,3 +24,13 @@
   margin: 0 auto;
   border-radius: 1em;
 }
+
+
+@media screen and (max-width: 767px) {
+  .ant-layout-sider {
+    display: none;
+  }
+  .ant-layout-sider.open {
+    display: block;
+  }
+}

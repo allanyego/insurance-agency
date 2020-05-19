@@ -32,7 +32,7 @@ export default function ApprovalBtn({ policy, updatePolicy, addSuccess, token })
     <Row style={{
       margin: '2em auto 1em'
     }}>
-      <Col span={5}
+      <Col xs={24} sm={8} span={5}
         style={{
           display: 'flex',
           alignItems: 'center'

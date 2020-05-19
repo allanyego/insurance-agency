@@ -53,15 +53,15 @@ export default function SelectIssuer({ insurers, updateInsurers }) {
   return (
     <Page pageTitle="Select insurance provider.">
       <Row justify="center" style={{ marginTop: '1.5em' }}>
-        <Col flex="auto" span={16}>
+        <Col flex="auto" xs={24} lg={12}>
           <Row justify="center">
-            <Col span={18}>
+            <Col xs={24} sm={18}>
               <Search placeholder="insurer name" onSearch={onSearch} enterButton />
             </Col>
           </Row>
           <Divider />
           <Row justify="center">
-            <Col flex="auto" span={16}>
+            <Col flex="auto" xs ={24} lg={20}>
               <List
                 dataSource={innerInsures}
                 itemLayout="horizontal"

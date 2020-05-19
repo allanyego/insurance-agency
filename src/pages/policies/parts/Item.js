@@ -42,7 +42,7 @@ export default function Item(props) {
     );
   };
   return (
-    <Col span={12}>
+    <Col xs={24} sm={12}>
       {props.routerTo ?
         <Link to={{
           pathname: props.routerTo,

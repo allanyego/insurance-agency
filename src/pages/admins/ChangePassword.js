@@ -42,7 +42,7 @@ export default function ChangePassword({ addError }) {
   return (
     <AuthPage title="Change password">
       <Row justify="center">
-        <Col span={6}>
+        <Col xs={20} sm={14} md={10} lg={8} xl={6}>
           {changeSuccess ?
             <div>
               Password change successful. Proceed to <Link to="/login">login</Link>

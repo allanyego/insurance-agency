@@ -56,12 +56,12 @@ export default function RenewalApplicationsList({
       <Row justify="center">
         <Col flex="auto">
           <Row justify="center">
-            <Col span={14}>
+            <Col xs={24} sm={18} lg={12}>
               <Search placeholder="Policy number" onSearch={onSearch} enterButton />
             </Col>
           </Row>
           <Row justify="center">
-            <Col span={20}>
+            <Col xs={24} lg={20}>
               <List
                 itemLayout="horizontal"
                 dataSource={innerPolicies}

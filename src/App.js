@@ -6,29 +6,28 @@ import {
 import './App.css';
 import Fallback from './components/Fallback';
 import Messages from './containers/common/Messages';
-// import Main from './containers/Main';
-// import Login from './containers/admins/Login';
-// import ChangePassword from './containers/admins/ChangePassword';
 const Main = React.lazy(() => import('./containers/Main'));
 const Login = React.lazy(() => import('./containers/admins/Login'));
 const ChangePassword = React.lazy(() => import('./containers/admins/ChangePassword'));
+
+const BASE_PATH = '/orient-insurance';
 
 function App() {
   return (
     <Router>
       <Suspense fallback={<Fallback />}>
         <Switch>
-          <Route path="/login">
+          <Route path={`${BASE_PATH}/login`}>
             <Login />
           </Route>
-          <Route path="/change-password">
+          <Route path={`${BASE_PATH}/change-password`}>
             <ChangePassword />
           </Route>
-          <Route path="/app">
+          <Route path={`${BASE_PATH}/app`}>
             <Main />
           </Route>
           <Route path="*">
-            <Redirect to="/app" />
+            <Redirect to={`${BASE_PATH}/app`} />
           </Route>
         </Switch>
       </Suspense>
@@ -38,3 +37,12 @@ function App() {
 }
 
 export default App;
+
+/* 
+xs	<576px and also default setting, could be a span value or an object containing above props	number|object	-	
+sm	≥576px, could be a span value or an object containing above props	number|object	-	
+md	≥768px, could be a span value or an object containing above props	number|object	-	
+lg	≥992px, could be a span value or an object containing above props	number|object	-	
+xl	≥1200px, could be a span value or an object containing above props	number|object	-	
+xxl	≥1600px, could be a span value or an object containing above props	number|object	-
+ */

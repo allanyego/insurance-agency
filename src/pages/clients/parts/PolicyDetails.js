@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Card,
-  Col,
   Divider,
   Form,
   Input,
@@ -10,12 +9,13 @@ import {
   Checkbox,
   InputNumber,
   Typography,
-  Radio
-} from 'antd';
+  Radio,
+} from "antd";
 
-import VehicleDetails from './VehicleDetails';
+import InputCol from "../../../components/InputCol";
+import VehicleDetails from "./VehicleDetails";
 
-const { Text } = Typography
+const { Text } = Typography;
 
 export default function PolicyDetails() {
   const [isForVehicle, setIsForVehicle] = useState(false);
@@ -23,115 +23,109 @@ export default function PolicyDetails() {
 
   const onClassChange = (event) => {
     const { value } = event.target;
-    if (value === 'fire') {
+    if (value === "fire") {
       return setIsForVehicle(false);
     }
     setIsForVehicle(true);
   };
 
-  const onPeriodStartChange = date => setStartDate(date);
+  const onPeriodStartChange = (date) => setStartDate(date);
 
   const restrictEndDate = (currentDate) => {
     if (startDate) {
       return currentDate.isSameOrBefore(startDate);
-    } 
+    }
     return currentDate.isSameOrBefore();
   };
 
   return (
-    <Card
-      title="Policy details">
+    <Card title="Policy details">
       <Row gutter={16}>
-        <Col flex="auto">
+        <InputCol>
           <Form.Item
             label="Policy number"
             name="policyNumber"
-            rules={[
-              { required: true, message: 'Policy number is required' }
-            ]}
+            rules={[{ required: true, message: "Policy number is required" }]}
           >
             <Input />
           </Form.Item>
-        </Col>
-        <Col flex="auto">
-          <Form.Item
-            label="Policy Period"
-          >
+        </InputCol>
+        <InputCol>
+          <Form.Item label="Policy Period">
             <Input.Group>
               <Form.Item
-                name={['policyPeriod', 'start']}
+                name={["policyPeriod", "start"]}
                 help="Select start date"
-                rules={[{ required: true, message: 'Start date required' }]}>
+                rules={[{ required: true, message: "Start date required" }]}
+              >
                 <DatePicker
                   disabledDate={(currentDate) => currentDate.isBefore()}
-                  onChange={onPeriodStartChange} />
+                  onChange={onPeriodStartChange}
+                />
               </Form.Item>
               <Form.Item
-                name={['policyPeriod', 'end']}
+                name={["policyPeriod", "end"]}
                 help="Select end date"
-                rules={[{ required: true, message: 'End date required' }]}>
-                <DatePicker
-                  disabledDate={restrictEndDate} />
+                rules={[{ required: true, message: "End date required" }]}
+              >
+                <DatePicker disabledDate={restrictEndDate} />
               </Form.Item>
             </Input.Group>
           </Form.Item>
-        </Col>
-        <Col flex="auto">
+        </InputCol>
+        <InputCol>
           <Form.Item
             label="Sum insured"
             name="sumInsured"
-            rules={[
-              { required: true, message: 'Sum is required' },
-            ]}
+            rules={[{ required: true, message: "Sum is required" }]}
           >
             <InputNumber min={1} />
           </Form.Item>
-        </Col>
+        </InputCol>
       </Row>
       <Row gutter={16}>
-        <Col flex="auto">
+        <InputCol>
           <Form.Item
             label="PVT"
             name="pvt"
-            rules={[
-              { required: true, message: 'PVT is required' },
-            ]}
+            rules={[{ required: true, message: "PVT is required" }]}
           >
             <InputNumber min={1} />
           </Form.Item>
-        </Col>
-        <Col flex="auto">
+        </InputCol>
+        <InputCol>
           <Form.Item
             label="Premium rate"
             name="premiumRate"
-            rules={[
-              { required: true, message: 'Premium rate is required' },
-            ]}
+            rules={[{ required: true, message: "Premium rate is required" }]}
           >
             <InputNumber min={1} />
           </Form.Item>
-        </Col>
+        </InputCol>
       </Row>
       <Row>
-        <Form.Item
-          label="Select the insurance class"
-          name="policyClass"
-          rules={[
-            { required: true, message: 'Please select policy class' }
-          ]}>
-          <Radio.Group onChange={onClassChange}>
-            <Radio value={"fire"}>Fire</Radio>
-            <Radio value={"vehicle"}>Vehicle</Radio>
-          </Radio.Group>
-        </Form.Item>
+        <InputCol>
+          <Form.Item
+            label="Select the insurance class"
+            name="policyClass"
+            rules={[{ required: true, message: "Please select policy class" }]}
+          >
+            <Radio.Group onChange={onClassChange}>
+              <Radio value={"fire"}>Fire</Radio>
+              <Radio value={"vehicle"}>Vehicle</Radio>
+            </Radio.Group>
+          </Form.Item>
+        </InputCol>
       </Row>
-      {isForVehicle &&
+      {isForVehicle && (
         <div>
           <Divider />
           <VehicleDetails />
-          <Text strong style={{ marginBottom: '0.7em' }}>Extension</Text>
+          <Text strong style={{ marginBottom: "0.7em" }}>
+            Extension
+          </Text>
           <Row className="OFormRow">
-            <Col span={12}>
+            <InputCol>
               <Form.Item
                 help="5% with a min of Kshs30,000/="
                 label="Add excess protection"
@@ -140,18 +134,18 @@ export default function PolicyDetails() {
               >
                 <Checkbox defaultChecked={false} />
               </Form.Item>
-            </Col>
-            <Col span={12}>
+            </InputCol>
+            <InputCol>
               <Form.Item
                 help="+ Kshs5000"
-                label="Young/New drivers"
+                label="Young/New driver"
                 name="rookie"
                 valuePropName="checked"
               >
                 <Checkbox defaultChecked={false} />
               </Form.Item>
-            </Col>
-            <Col span={12}>
+            </InputCol>
+            <InputCol>
               <Form.Item
                 label="Passengers (PLL)"
                 name="passengersPllCoverage"
@@ -159,8 +153,8 @@ export default function PolicyDetails() {
               >
                 <Checkbox defaultChecked={false} />
               </Form.Item>
-            </Col>
-            <Col span={12}>
+            </InputCol>
+            <InputCol>
               <Form.Item
                 help="10% antitheft device, 20% no device"
                 label="Theft"
@@ -169,10 +163,10 @@ export default function PolicyDetails() {
               >
                 <Checkbox defaultChecked={false} />
               </Form.Item>
-            </Col>
+            </InputCol>
           </Row>
         </div>
-      }
+      )}
       {/* <Divider />
 
       <section className="OExtContainer">
@@ -187,6 +181,5 @@ export default function PolicyDetails() {
 
       </section> */}
     </Card>
-
   );
 }

@@ -10,7 +10,7 @@ export default function Fallback() {
         alignItems: 'center',
       }}>
       <div>
-        <img src="orient-logo.png" alt="Company logo"
+        <img src="/orient-insurance/orient-logo.png" alt="Company logo"
           style={{
             margin: '0 auto',
             display: 'block',

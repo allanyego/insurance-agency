@@ -19,15 +19,14 @@ import { Link } from 'react-router-dom';
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
-export default function OSider({ collapsed }) {
+export default function OSider({ collapsed, open=true }) {
   return (
-    <Sider trigger={null} collapsible collapsed={collapsed}>
+    <Sider trigger={null} collapsible collapsed={collapsed}
+      className={open ? "open" : ""}>
       <div className="logo">
-        <img src="/orient-logo.png" alt="Company logo" />
+        <img src="/orient-insurance/orient-logo.png" alt="Company logo" />
       </div>
-      <Menu theme="dark" mode="inline"
-        // defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']}
-      >
+      <Menu theme="dark" mode="inline">
         <SubMenu
           key="sub1"
           title={

@@ -10,3 +10,7 @@ body {
 #root {
   height: 100vh;
 }
+
+#root .ant-layout {
+  position: relative;
+}

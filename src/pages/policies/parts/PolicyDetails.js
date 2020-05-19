@@ -6,7 +6,7 @@ import InsurerCard from './InsurerCard';
 
 export default function PolicyDetails(props) {
   return (
-    <Row gutter={32}>
+    <Row gutter={[32, 16]}>
       {(props.policyClass === 'vehicle') &&
         <VehicleCard {...props} />
       }
