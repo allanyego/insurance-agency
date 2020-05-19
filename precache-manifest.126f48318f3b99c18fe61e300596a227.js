@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f8281ce248cb6e8dee820ff74dc53363",
+    "revision": "7774b07f4abf48dd9217388369c349cf",
     "url": "/orient-insurance/index.html"
   },
   {
@@ -32,7 +32,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orient-insurance/static/css/8.eb32eee5.chunk.css"
   },
   {
-    "revision": "fda52c979a77c67790b4",
+    "revision": "f573489a2a845cde031b",
     "url": "/orient-insurance/static/css/main.133407ca.chunk.css"
   },
   {
@@ -68,8 +68,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orient-insurance/static/js/8.0051f8bb.chunk.js"
   },
   {
-    "revision": "fda52c979a77c67790b4",
-    "url": "/orient-insurance/static/js/main.5675984c.chunk.js"
+    "revision": "f573489a2a845cde031b",
+    "url": "/orient-insurance/static/js/main.d71bd485.chunk.js"
   },
   {
     "revision": "9e7bbed22d59f41e442c",
