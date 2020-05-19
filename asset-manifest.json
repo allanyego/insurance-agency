@@ -7,8 +7,8 @@
     "static/js/1.bcb8944b.chunk.js": "/orient-insurance/static/js/1.bcb8944b.chunk.js",
     "static/js/1.bcb8944b.chunk.js.map": "/orient-insurance/static/js/1.bcb8944b.chunk.js.map",
     "main.css": "/orient-insurance/static/css/main.133407ca.chunk.css",
-    "main.js": "/orient-insurance/static/js/main.605b837a.chunk.js",
-    "main.js.map": "/orient-insurance/static/js/main.605b837a.chunk.js.map",
+    "main.js": "/orient-insurance/static/js/main.fddb0d63.chunk.js",
+    "main.js.map": "/orient-insurance/static/js/main.fddb0d63.chunk.js.map",
     "runtime-main.js": "/orient-insurance/static/js/runtime-main.d1b1ef49.js",
     "runtime-main.js.map": "/orient-insurance/static/js/runtime-main.d1b1ef49.js.map",
     "static/css/4.0670b5fa.chunk.css": "/orient-insurance/static/css/4.0670b5fa.chunk.css",
@@ -27,7 +27,7 @@
     "static/js/8.1cdb3145.chunk.js": "/orient-insurance/static/js/8.1cdb3145.chunk.js",
     "static/js/8.1cdb3145.chunk.js.map": "/orient-insurance/static/js/8.1cdb3145.chunk.js.map",
     "index.html": "/orient-insurance/index.html",
-    "precache-manifest.1dc812131512f26abb7323c7f4cf18c2.js": "/orient-insurance/precache-manifest.1dc812131512f26abb7323c7f4cf18c2.js",
+    "precache-manifest.b4e4c130c7c68f25df07988d38e5d12a.js": "/orient-insurance/precache-manifest.b4e4c130c7c68f25df07988d38e5d12a.js",
     "service-worker.js": "/orient-insurance/service-worker.js",
     "static/css/0.32fffb6f.chunk.css.map": "/orient-insurance/static/css/0.32fffb6f.chunk.css.map",
     "static/css/1.13af234c.chunk.css.map": "/orient-insurance/static/css/1.13af234c.chunk.css.map",
@@ -44,6 +44,6 @@
     "static/css/4.0670b5fa.chunk.css",
     "static/js/4.a6c5fe32.chunk.js",
     "static/css/main.133407ca.chunk.css",
-    "static/js/main.605b837a.chunk.js"
+    "static/js/main.fddb0d63.chunk.js"
   ]
 }
