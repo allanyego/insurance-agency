@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/orient-insurance/precache-manifest.b4e4c130c7c68f25df07988d38e5d12a.js"
+  "/orient-insurance/precache-manifest.a0714a305fc0b8e19a59b71dae25b11f.js"
 );
 
 self.addEventListener('message', (event) => {
