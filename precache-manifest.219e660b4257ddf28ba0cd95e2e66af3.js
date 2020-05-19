@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "811584f341e9efa04c15b3b034893e30",
+    "revision": "4e3ea63d4a69e7835dbc6af01f19ca23",
     "url": "/orient-insurance/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orient-insurance/static/css/1.13af234c.chunk.css"
   },
   {
-    "revision": "ce0cf44694aa0780baf6",
+    "revision": "2bc363bf5a4f48a95fde",
     "url": "/orient-insurance/static/css/4.0670b5fa.chunk.css"
   },
   {
@@ -20,19 +20,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orient-insurance/static/css/5.09a89592.chunk.css"
   },
   {
-    "revision": "6be872204ebb61e3913c",
+    "revision": "d8830ecb1897343632cb",
     "url": "/orient-insurance/static/css/6.fcd85223.chunk.css"
   },
   {
-    "revision": "450ef882224e4bc73fc5",
+    "revision": "b3b42cd8fa190222a154",
     "url": "/orient-insurance/static/css/7.eb32eee5.chunk.css"
   },
   {
-    "revision": "af59ecc64e3c5b1dc55f",
+    "revision": "fe63c4c44ab835f93acf",
     "url": "/orient-insurance/static/css/8.eb32eee5.chunk.css"
   },
   {
-    "revision": "f573489a2a845cde031b",
+    "revision": "4c536b5f8f882e9be9a8",
     "url": "/orient-insurance/static/css/main.133407ca.chunk.css"
   },
   {
@@ -44,35 +44,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/orient-insurance/static/js/1.bcb8944b.chunk.js"
   },
   {
-    "revision": "ce0cf44694aa0780baf6",
-    "url": "/orient-insurance/static/js/4.a6c5fe32.chunk.js"
+    "revision": "2bc363bf5a4f48a95fde",
+    "url": "/orient-insurance/static/js/4.cd32a26c.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/orient-insurance/static/js/4.a6c5fe32.chunk.js.LICENSE.txt"
+    "url": "/orient-insurance/static/js/4.cd32a26c.chunk.js.LICENSE.txt"
   },
   {
     "revision": "cd2900cdaca888719b25",
     "url": "/orient-insurance/static/js/5.649befe3.chunk.js"
   },
   {
-    "revision": "6be872204ebb61e3913c",
-    "url": "/orient-insurance/static/js/6.25fd2af1.chunk.js"
+    "revision": "d8830ecb1897343632cb",
+    "url": "/orient-insurance/static/js/6.5bbe3f90.chunk.js"
   },
   {
-    "revision": "450ef882224e4bc73fc5",
-    "url": "/orient-insurance/static/js/7.1c346af6.chunk.js"
+    "revision": "b3b42cd8fa190222a154",
+    "url": "/orient-insurance/static/js/7.99781b2e.chunk.js"
   },
   {
-    "revision": "af59ecc64e3c5b1dc55f",
-    "url": "/orient-insurance/static/js/8.0051f8bb.chunk.js"
+    "revision": "fe63c4c44ab835f93acf",
+    "url": "/orient-insurance/static/js/8.e34c1779.chunk.js"
   },
   {
-    "revision": "f573489a2a845cde031b",
-    "url": "/orient-insurance/static/js/main.d71bd485.chunk.js"
+    "revision": "4c536b5f8f882e9be9a8",
+    "url": "/orient-insurance/static/js/main.4978f0f6.chunk.js"
   },
   {
-    "revision": "44bce0e5dbc83c9cfc2c",
-    "url": "/orient-insurance/static/js/runtime-main.2775ce15.js"
+    "revision": "51f20821dae7e8c17bd1",
+    "url": "/orient-insurance/static/js/runtime-main.2c9ed6c7.js"
   }
 ]);
