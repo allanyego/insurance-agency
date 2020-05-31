@@ -12,7 +12,8 @@ import {
   ADD_SUCCESS,
   SHIFT_SUCCESS,
   LOGIN,
-  LOGOUT
+  LOGOUT,
+  SET_PRINT_DOC
 } from '../actionTypes';
 
 export const addClient = (client) => ({

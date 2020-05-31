@@ -21,6 +21,7 @@ import Applications from './Applications';
 import { Insurer } from "./insurers";
 import { Client } from './clients';
 import { Policy } from './policies';
+import Note from './note';
 
 const { Content } = Layout;
 const {useBreakpoint} = Grid;
@@ -108,6 +109,9 @@ export default function Main({ auth, addError }) {
             </Route>
             <Route path={`${path}/admins/new`}>
               <NewAdminForm />
+            </Route>
+            <Route path={`${path}/note`}>
+              <Note />
             </Route>
             <Route path="*">
               <Redirect to={`${path}/clients`} />

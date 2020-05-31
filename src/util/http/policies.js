@@ -57,6 +57,16 @@ export async function approvePolicy({ policyId, token }) {
   });
 }
 
+export async function renewPolicy({ policyId, token }) {
+  return await request({
+    url: `${BASE_URL}/${policyId}/renew`,
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  });
+}
+
 export async function search({
   policyNumber,
   client,

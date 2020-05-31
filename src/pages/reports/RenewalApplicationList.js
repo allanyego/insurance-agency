@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import Page from '../../components/Page';
 import { search } from '../../util/http/policies';
+import { AList } from './NewApplicationList';
 
 const { Search } = Input;
 
@@ -12,7 +13,6 @@ export default function RenewalApplicationsList({
   renewalApplications,
   updatePolicies
 }) {
-  const location = useLocation();
   const [term, setTerm] = useState('');
   const [innerPolicies, setInnerPolicies] = useState(renewalApplications);
 
@@ -62,31 +62,7 @@ export default function RenewalApplicationsList({
           </Row>
           <Row justify="center">
             <Col xs={24} lg={20}>
-              <List
-                itemLayout="horizontal"
-                dataSource={innerPolicies}
-                renderItem={item => (
-                  <Link to={{
-                    pathname: `/app/policies/${item.id}`,
-                    state: {
-                      prevPath: location.pathname
-                    }
-                  }}>
-                    <List.Item>
-                      <List.Item.Meta
-                        title={String(item.policyNumber).toUpperCase()}
-                        description={
-                          "Applied " +
-                          new Date(item.createdAt).toLocaleDateString()
-                        }
-                      />
-                      <div>
-                        <CaretRightOutlined />
-                      </div>
-                    </List.Item>
-                  </Link>
-                )}
-              />
+              <AList items={innerPolicies} />
             </Col>
           </Row>
         </Col>

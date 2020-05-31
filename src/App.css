@@ -30,35 +30,6 @@
   height: 100%;
 }
 
-.FallbackContainer div {
-  position: relative;
-}
-
-.FallbackContainer div::after, .FallbackContainer div::before {
-  content: "";
-  position: absolute;
-  border-radius: 10px;
-  animation: FadeOut 0.7s ease-out infinite alternate;
-}
-
-.FallbackContainer div::after {
-  width: 110%;
-  height: 110%;
-  background-color: #3e46a0;
-  top: -5%;
-  left: -5%;
-  z-index: -1;
-}
-
-.FallbackContainer div::before {
-  width: 150%;
-  height: 150%;
-  background-color: #4d59d4;
-  top: -25%;
-  left: -25%;
-  z-index: -1;
-}
-
 @keyframes FadeOut {
   to {
     transform: scale(2.5);

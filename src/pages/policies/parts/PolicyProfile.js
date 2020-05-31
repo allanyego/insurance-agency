@@ -1,20 +1,22 @@
 import React, { useEffect } from "react";
-import { Col, Row, Typography } from "antd";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 
 import PolicyDetails from "../../../containers/policies/parts/PolicyDetails";
 import ClientDetails from "../../../containers/policies/parts/ClientDetails";
 import ApprovalBtn from "../../../containers/policies/parts/ApprovalBtn";
+import RenewalBtn from "../../../containers/policies/parts/RenewalBtn";
 import ProfileContainer from "../../../components/ProfileContainer";
 import ProfileSkeleton from "../../../components/ProfileSkeleton";
 import Detail from "../../../components/Detail";
 import { getById } from "../../../util/http/policies";
-
-const { Text } = Typography;
+import { Typography } from "antd";
+import titleCase from "../../../util/titleCase";
 
 export default function PolicyProfile({ policy, addPolicy }) {
   const { policyId } = useParams();
   const history = useHistory();
+  const isEpxired = new Date() > new Date(policy.policyPeriodEnd);
+
   useEffect(() => {
     (async () => {
       if (!policy) {
@@ -53,9 +55,16 @@ export default function PolicyProfile({ policy, addPolicy }) {
         <Detail title={"Client"}>
           <ClientDetails clientId={policy.client} />
         </Detail>
-        <Detail title={"Class"} content={policy.policyClass} />
+        <Detail title={"Class"} content={titleCase(policy.policyClass)} />
+        <Detail title={"Type"}>
+          <div>
+            {titleCase(policy.type)} | <NoteLink {...policy} />
+          </div>
+        </Detail>
 
-        {!policy.approved && <ApprovalBtn policy={policy} />}
+        {isEpxired && <RenewalBtn policy={policy} />}
+
+        {!policy.approved && !isEpxired && <ApprovalBtn policy={policy} />}
       </div>
       <PolicyDetails
         policyId={policy.id}
@@ -64,4 +73,12 @@ export default function PolicyProfile({ policy, addPolicy }) {
       />
     </ProfileContainer>
   );
+}
+
+function NoteLink({ id, type, approved }) {
+  if (!approved) {
+    return <Typography.Text disabled>View Note</Typography.Text>;
+  }
+
+  return <Link to={`/app/note/${id}/${type}`}>View Note</Link>;
 }

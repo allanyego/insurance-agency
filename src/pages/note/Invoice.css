@@ -1,0 +1,79 @@
+.invoice-container {
+  position: relative;
+  padding: 1.5em 0 2em;
+  border: dashed 0.2px;
+}
+
+.invoice-page {
+  width: 850px;
+  margin: 0 auto;
+}
+
+.invoice-controls {
+  position: fixed;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1em;
+  padding: 1em;
+  background-color: #FFFFFF;
+  right: 4vw;
+  top: 7em;
+  border-radius: 1em;
+  box-shadow: 0 2px 7px -3px;
+  z-index: 3;
+}
+
+.debit-note {
+  padding-top: 2em;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.text-title {
+  text-transform: capitalize;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.policy-schedule table {
+  width: 100%;
+}
+
+.policy-schedule td,
+th {
+  padding: 0 0.5em;
+  border: solid 0.25px #d6d6d6;
+}
+
+.policy-schedule .liability-list {
+  margin-top: 0.75em;
+}
+
+.policy-schedule .liability-list > .ant-row {
+  border-bottom: solid 0.25px #f1f0f0;
+}
+
+.policy-schedule .heading {
+  font-size: 120%;
+  margin-bottom: 0.5em;
+}
+
+.invoice-page .logo,
+.debit-note .title {
+  display: flex;
+  align-items: center;
+}
+
+.invoice-page .logo img {
+  width: 3em;
+  border-radius: 15%;
+  height: auto;
+}
+
+.policy-schedule .client-info {
+  margin-bottom: 0.85em;
+}

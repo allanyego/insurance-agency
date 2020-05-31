@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import {
-  HashRouter as Router,
+  HashRouter,
+  BrowserRouter,
   Switch,
   Route,
   Redirect,
@@ -9,11 +10,16 @@ import {
 import "./App.css";
 import Fallback from "./components/Fallback";
 import Messages from "./containers/common/Messages";
+import Print from "./containers/note/Print";
 const Main = React.lazy(() => import("./containers/Main"));
 const Login = React.lazy(() => import("./containers/admins/Login"));
 const ChangePassword = React.lazy(() =>
   import("./containers/admins/ChangePassword")
 );
+
+const Router = process.env.NODE_ENV === 'production' ?
+  HashRouter :
+  BrowserRouter;
 
 function App() {
   return (
@@ -28,6 +34,12 @@ function App() {
           </Route>
           <Route path="/app">
             <Main />
+          </Route>
+          <Route path="/print">
+            <Print />
+          </Route>
+          <Route path="/test-loader">
+            <Fallback />
           </Route>
           <Route path="*">
             <Redirect to="/app" />

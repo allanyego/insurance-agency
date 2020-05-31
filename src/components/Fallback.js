@@ -1,4 +1,5 @@
 import React from 'react'
+import Loader from './Loader';
 
 export default function Fallback() {
   return (
@@ -6,18 +7,8 @@ export default function Fallback() {
       style={{
         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
       }}>
-      <div>
-        <img src="orient-logo.png" alt="Company logo"
-          style={{
-            margin: '0 auto',
-            display: 'block',
-            borderRadius: '10%',
-            width: '85px',
-          }} />
-      </div>
+      <Loader />
     </div>
   );
 }
