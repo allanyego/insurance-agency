@@ -11,11 +11,12 @@ import Detail from "../../../components/Detail";
 import { getById } from "../../../util/http/policies";
 import { Typography } from "antd";
 import titleCase from "../../../util/titleCase";
+import isExpiredDate from "../../../util/dates/isDateExpired";
 
 export default function PolicyProfile({ policy, addPolicy }) {
   const { policyId } = useParams();
   const history = useHistory();
-  const isEpxired = new Date() > new Date(policy.policyPeriodEnd);
+  const isEpxired = isExpiredDate(policy.policyPeriodStart);
 
   useEffect(() => {
     (async () => {

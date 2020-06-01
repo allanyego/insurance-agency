@@ -8,6 +8,9 @@ import "./Invoice.css";
 import Signatory from "./Signatory";
 import InvoiceContainer from "./InvoiceContainer";
 import Unapproved from "./Unapproved";
+
+import validityPeriod from '../../util/dates/validityPeriod';
+
 const { Text, Title } = Typography;
 
 export default function PolicySchedule({
@@ -89,7 +92,7 @@ export function Note({ policy, client, vehicle, insurer, auth }) {
           <br />
           <Text>
             From {formattedDate(policy.policyPeriodStart)} to{" "}
-            {formattedDate(policy.policyPeriodEnd)}; both dates inclusive.
+            {formattedDate(validityPeriod(policy.policyPeriodStart))}; both dates inclusive.
           </Text>
           <br />
           <Text>

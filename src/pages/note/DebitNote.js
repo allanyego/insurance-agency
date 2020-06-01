@@ -8,19 +8,13 @@ import Signatory from "./Signatory";
 import InvoiceContainer from "./InvoiceContainer";
 import Unapproved from "./Unapproved";
 
+import validityPeriod from '../../util/dates/validityPeriod';
+
 const { Text, Title } = Typography;
 
-export default function DebitNote({
-  policy,
-  client,
-  vehicle,
-  insurer,
-  auth,
-}) {
+export default function DebitNote({ policy, client, vehicle, insurer, auth }) {
   if (!policy.approved) {
-    return (
-      <Unapproved policy={policy} />
-    );
+    return <Unapproved policy={policy} />;
   }
 
   return (
@@ -44,9 +38,11 @@ export function Note({ policy, client, vehicle, insurer, auth }) {
             <img src="/orient-insurance/orient-logo.png" alt="orient logo" />
           </Col>
         </Row>
-        <Row style={{
-          marginBottom: "1em"
-        }}>
+        <Row
+          style={{
+            marginBottom: "1em",
+          }}
+        >
           <Col flex="auto" className="text-upper">
             <div className="text-title">
               <Text strong>Insurer</Text>
@@ -96,16 +92,18 @@ export function Note({ policy, client, vehicle, insurer, auth }) {
                 <Text>{policy.policyClass}</Text>
               </Col>
             </Row>
-            <Row gutter={24}>
-              <Col span={8} className="text-right">
-                <Text className="text-title" strong>
-                  reg no:
-                </Text>
-              </Col>
-              <Col>
-                <Text>{vehicle.registrationNumber}</Text>
-              </Col>
-            </Row>
+            {policy.policyClass === "vehicle" && (
+              <Row gutter={24}>
+                <Col span={8} className="text-right">
+                  <Text className="text-title" strong>
+                    reg no:
+                  </Text>
+                </Col>
+                <Col>
+                  <Text>{vehicle.registrationNumber}</Text>
+                </Col>
+              </Row>
+            )}
           </Col>
           <Col flex="auto">
             <Row gutter={24}>
@@ -125,7 +123,9 @@ export function Note({ policy, client, vehicle, insurer, auth }) {
                 </Text>
               </Col>
               <Col>
-                <Text>{formattedDate(policy.policyPeriodEnd)}</Text>
+                <Text>
+                  {formattedDate(validityPeriod(policy.policyPeriodStart))}
+                </Text>
               </Col>
             </Row>
           </Col>
