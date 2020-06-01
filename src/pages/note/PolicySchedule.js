@@ -18,11 +18,9 @@ export default function PolicySchedule({
   auth,
 }) {
   if (!policy.approved) {
-    return (
-      <Unapproved policy={policy} />
-    );
+    return <Unapproved policy={policy} />;
   }
-  
+
   return (
     <InvoiceContainer {...{ policy, client, vehicle, insurer }}>
       <Note {...{ policy, client, vehicle, insurer, auth }} />
@@ -36,7 +34,11 @@ export function Note({ policy, client, vehicle, insurer, auth }) {
       <Col flex="auto">
         <Row>
           <Col flex="auto" className="text-upper">
-            <Title level={3}>motor private</Title>
+            <Title level={3}>
+              {policy.policyClass === "vehicle"
+                ? "motor private"
+                : "fire cover"}
+            </Title>
             <div className="heading">
               <Row gutter={16}>
                 <Col span={4}>
@@ -95,44 +97,10 @@ export function Note({ policy, client, vehicle, insurer, auth }) {
             and the company shall agree to renew the policy.
           </Text>
         </p>
-        <p>
-          <Text strong>Motor Vehicle</Text>
-          <br />
-          <Text>
-            Any of the following, and/or any other subsequent additional
-            vehicle(s) are endorsed hereinafter.
-          </Text>
-        </p>
-        <Row>
-          <Col flex="auto">
-            <table>
-              <thead className="text-title">
-                <tr>
-                  <th>reg no</th>
-                  <th>chassis no</th>
-                  <th>make</th>
-                  <th>type of body</th>
-                  <th>C.C</th>
-                  <th>year of manufacture</th>
-                  <th>insured's estimate of value</th>
-                  <th>cover type</th>
-                </tr>
-              </thead>
-              <tbody className="text-upper">
-                <tr>
-                  <td>{vehicle.registrationNumber}</td>
-                  <td></td>
-                  <td>{vehicle.make}</td>
-                  <td>{vehicle.bodyType}</td>
-                  <td></td>
-                  <td></td>
-                  <td>{policy.sumInsured}</td>
-                  <td>comp</td>
-                </tr>
-              </tbody>
-            </table>
-          </Col>
-        </Row>
+
+        {policy.policyClass === "vehicle" && (
+          <VehicleInfo vehicle={vehicle} policy={policy} />
+        )}
 
         <Liability />
         <Signatory {...auth} />
@@ -143,4 +111,49 @@ export function Note({ policy, client, vehicle, insurer, auth }) {
 
 export function formattedDate(dateString) {
   return new Date(dateString).toLocaleDateString();
+}
+
+function VehicleInfo({ vehicle, policy }) {
+  return (
+    <div>
+      <p>
+        <Text strong>Motor Vehicle</Text>
+        <br />
+        <Text>
+          Any of the following, and/or any other subsequent additional
+          vehicle(s) are endorsed hereinafter.
+        </Text>
+      </p>
+      <Row>
+        <Col flex="auto">
+          <table>
+            <thead className="text-title">
+              <tr>
+                <th>reg no</th>
+                <th>chassis no</th>
+                <th>make</th>
+                <th>type of body</th>
+                <th>C.C</th>
+                <th>year of manufacture</th>
+                <th>insured's estimate of value</th>
+                <th>cover type</th>
+              </tr>
+            </thead>
+            <tbody className="text-upper">
+              <tr>
+                <td>{vehicle.registrationNumber}</td>
+                <td></td>
+                <td>{vehicle.make}</td>
+                <td>{vehicle.bodyType}</td>
+                <td></td>
+                <td></td>
+                <td>{policy.sumInsured}</td>
+                <td>comp</td>
+              </tr>
+            </tbody>
+          </table>
+        </Col>
+      </Row>
+    </div>
+  );
 }
